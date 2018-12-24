@@ -12,13 +12,9 @@ MySQL - 5.7.20-log : Database - feps
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`feps` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `feps`;
 
 /*Table structure for table `tsysuser` */
-
-DROP TABLE IF EXISTS `tsysuser`;
 
 CREATE TABLE `tsysuser` (
   `fs_id` varchar(32) NOT NULL COMMENT '用户标示',
@@ -29,7 +25,7 @@ CREATE TABLE `tsysuser` (
   `Fs_tel` varchar(32) DEFAULT NULL COMMENT '用户手机号',
   `Fs_founder` varchar(32) DEFAULT NULL COMMENT '创建人id',
   `Fs_dep` varchar(32) DEFAULT NULL COMMENT '所属机构',
-  `Fs_type` varchar(2) DEFAULT NULL COMMENT '账号类型:1:学校账号 2：机构账号',
+  `Fs_type` varchar(2) DEFAULT NULL COMMENT '账号类型:1:学校账号 2：机构账号3；超级管理员',
   `Ft_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `Fs_sex` varchar(2) DEFAULT NULL COMMENT '性别:0-男1-女',
   `Fs_serialnumber` varchar(32) DEFAULT NULL COMMENT '身份证号',

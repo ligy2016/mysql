@@ -12,17 +12,13 @@ MySQL - 5.7.20-log : Database - feps
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`feps` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `feps`;
 
 /* Procedure structure for procedure `prod_fee_updata_blnc` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `prod_fee_updata_blnc` */;
-
 DELIMITER $$
 
-/*!50003 CREATE PROCEDURE `prod_fee_updata_blnc`(out res char(1),
+/*!50003 CREATE DEFINER=`qlqqmn`@`%` PROCEDURE `prod_fee_updata_blnc`(out res char(1),
 	type char(1),
 	traceid varchar(32),
 	feegoods varchar(2),

@@ -14,15 +14,19 @@ MySQL - 5.7.20-log : Database - feps
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 USE `feps`;
 
-/*Table structure for table `tpaperquestion` */
+/*Table structure for table `ttraceinterestpayment` */
 
-CREATE TABLE `tpaperquestion` (
-  `Fs_id` varchar(32) NOT NULL COMMENT '用户标示',
-  `Fs_paperid` varchar(32) NOT NULL COMMENT '试卷id',
-  `Fs_questionid` varchar(32) DEFAULT NULL COMMENT '试题id',
-  `Fs_ score` varchar(2) DEFAULT NULL COMMENT '每题分数',
+CREATE TABLE `ttraceinterestpayment` (
+  `Fs_id` varchar(32) NOT NULL COMMENT 'id',
+  `Fs_traceid` varchar(32) NOT NULL COMMENT '竞赛id',
+  `Fs_marketcode` varchar(32) NOT NULL COMMENT '市场编号',
+  `Fs_kindcode` varchar(32) NOT NULL COMMENT '市场子类别',
+  `Fs_stockcode` varchar(32) NOT NULL COMMENT '证券代码',
+  `Fd_money` decimal(18,4) NOT NULL COMMENT '付息金额(每手)',
+  `Fs_founder` varchar(32) NOT NULL COMMENT '操作人',
+  `Ft_createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`Fs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='试卷试题表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='付息(特殊处理)';
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

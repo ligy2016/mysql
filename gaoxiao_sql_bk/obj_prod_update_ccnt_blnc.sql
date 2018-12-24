@@ -12,17 +12,13 @@ MySQL - 5.7.20-log : Database - feps
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`feps` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `feps`;
 
 /* Procedure structure for procedure `prod_update_ccnt_blnc` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `prod_update_ccnt_blnc` */;
-
 DELIMITER $$
 
-/*!50003 CREATE PROCEDURE `prod_update_ccnt_blnc`(OUT `res` char(1), IN `type1` char(1), IN `type2` char(1), IN `amount` decimal(19,3), IN `fuacct` varchar(18), IN `sub2fuacct` int, IN `sub3fuacct` int)
+/*!50003 CREATE DEFINER=`qlqqmn`@`%` PROCEDURE `prod_update_ccnt_blnc`(OUT `res` char(1), IN `type1` char(1), IN `type2` char(1), IN `amount` decimal(19,3), IN `fuacct` varchar(18), IN `sub2fuacct` int, IN `sub3fuacct` int)
 BEGIN
 ##名称
 	#prod_update_ccnt_blnc

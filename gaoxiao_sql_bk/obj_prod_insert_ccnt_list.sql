@@ -12,17 +12,13 @@ MySQL - 5.7.20-log : Database - feps
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`feps` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `feps`;
 
 /* Procedure structure for procedure `prod_insert_ccnt_list` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `prod_insert_ccnt_list` */;
-
 DELIMITER $$
 
-/*!50003 CREATE PROCEDURE `prod_insert_ccnt_list`(OUT `res` char(1), INOUT `acno` int, IN `type1` char(1), IN `ctid` int, IN `fuacct` varchar(18), IN `sub2fuacct` int, IN `sub3fuacct` int,IN `amttype` varchar(3), IN `amtocctype` varchar(8), IN `dric` int, IN `amt` decimal(38,4), IN `trdtype` varchar(32), IN `trdorderno` varchar(32))
+/*!50003 CREATE DEFINER=`qlqqmn`@`%` PROCEDURE `prod_insert_ccnt_list`(OUT `res` char(1), INOUT `acno` int, IN `type1` char(1), IN `ctid` int, IN `fuacct` varchar(18), IN `sub2fuacct` int, IN `sub3fuacct` int,IN `amttype` varchar(3), IN `amtocctype` varchar(8), IN `dric` int, IN `amt` decimal(38,4), IN `trdtype` varchar(32), IN `trdorderno` varchar(32))
 BEGIN
 	#此过程不处理充值和提现
 	#res：返回值（'0'：成功 '1'：失败）

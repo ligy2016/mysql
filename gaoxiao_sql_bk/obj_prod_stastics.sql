@@ -12,17 +12,13 @@ MySQL - 5.7.20-log : Database - feps
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`feps` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `feps`;
 
 /* Procedure structure for procedure `prod_stastics` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `prod_stastics` */;
-
 DELIMITER $$
 
-/*!50003 CREATE PROCEDURE `prod_stastics`( opt int,out ret INT)
+/*!50003 CREATE DEFINER=`qlqqmn`@`%` PROCEDURE `prod_stastics`( opt int,out ret INT)
 BEGIN
 	DECLARE contestid VARCHAR (32) DEFAULT('') ;
 	DECLARE call_ret INT (0) ;
@@ -31,7 +27,7 @@ BEGIN
 	DECLARE done INT DEFAULT(FALSE) ;
 	DECLARE cur CURSOR FOR  SELECT Fs_id  FROM    trace  WHERE  Fs_status='1'  and Fs_practice ='2' AND  TO_DAYS(Ft_starttime  ) <=TO_DAYS(CURDATE())   AND   TO_DAYS(Ft_endtime ) >=TO_DAYS(CURDATE()) ;
 	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE ;	
-	DECLARE EXIT HANDLER FOR SQLSTATE '42S02' BEGIN 
+	DECLARE EXIT HANDLER FOR sqlexception BEGIN 
 		ROLLBACK;
 		SET ret = 1 ;
 		SET msg = CONCAT('[error]prod_stastics  类型：',  opt,'  赛事id： ', contestid,'  ',LINE) ;	

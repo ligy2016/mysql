@@ -12,17 +12,13 @@ MySQL - 5.7.20-log : Database - feps
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`feps` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `feps`;
 
 /* Procedure structure for procedure `unit_test_creat_user` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `unit_test_creat_user` */;
-
 DELIMITER $$
 
-/*!50003 CREATE PROCEDURE `unit_test_creat_user`(testclientid INT)
+/*!50003 CREATE DEFINER=`qlqqmn`@`%` PROCEDURE `unit_test_creat_user`(testclientid INT)
 BEGIN
 DECLARE id VARCHAR(18);
 DECLARE sec_qq VARCHAR(18);
